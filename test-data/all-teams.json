@@ -1,0 +1,184 @@
+{
+    "teams": [
+        {
+            "id": 1,
+            "name": "atlanta hawks",
+            "city": "atlanta",
+            "logo": "https://upload.wikimedia.org/wikipedia/fr/e/ee/hawks_2016.png"
+        },
+        {
+            "id": 2,
+            "name": "boston celtics",
+            "city": "boston",
+            "logo": "https://upload.wikimedia.org/wikipedia/fr/thumb/6/65/celtics_de_boston_logo.svg/1024px-celtics_de_boston_logo.svg.png"
+        },
+        {
+            "id": 4,
+            "name": "brooklyn nets",
+            "city": "brooklyn",
+            "logo": "https://upload.wikimedia.org/wikipedia/commons/thumb/4/44/brooklyn_nets_newlogo.svg/130px-brooklyn_nets_newlogo.svg.png"
+        },
+        {
+            "id": 5,
+            "name": "charlotte hornets",
+            "city": "charlotte",
+            "logo": "https://upload.wikimedia.org/wikipedia/fr/thumb/f/f3/hornets_de_charlotte_logo.svg/1200px-hornets_de_charlotte_logo.svg.png"
+        },
+        {
+            "id": 6,
+            "name": "chicago bulls",
+            "city": "chicago",
+            "logo": "https://upload.wikimedia.org/wikipedia/fr/thumb/d/d1/bulls_de_chicago_logo.svg/1200px-bulls_de_chicago_logo.svg.png"
+        },
+        {
+            "id": 7,
+            "name": "cleveland cavaliers",
+            "city": "cleveland",
+            "logo": "https://upload.wikimedia.org/wikipedia/fr/thumb/0/06/cavs_de_cleveland_logo_2017.png/150px-cavs_de_cleveland_logo_2017.png"
+        },
+        {
+            "id": 10,
+            "name": "detroit pistons",
+            "city": "detroit",
+            "logo": "https://upload.wikimedia.org/wikipedia/commons/thumb/3/39/logo_of_the_detroit_pistons.png/300px-logo_of_the_detroit_pistons.png"
+        },
+        {
+            "id": 15,
+            "name": "indiana pacers",
+            "city": "indiana",
+            "logo": "https://upload.wikimedia.org/wikipedia/fr/thumb/c/cf/pacers_de_l%27indiana_logo.svg/1180px-pacers_de_l%27indiana_logo.svg.png"
+        },
+        {
+            "id": 20,
+            "name": "miami heat",
+            "city": "miami",
+            "logo": "https://upload.wikimedia.org/wikipedia/fr/thumb/1/1c/miami_heat_-_logo.svg/1200px-miami_heat_-_logo.svg.png"
+        },
+        {
+            "id": 21,
+            "name": "milwaukee bucks",
+            "city": "milwaukee",
+            "logo": "https://upload.wikimedia.org/wikipedia/fr/3/34/bucks2015.png"
+        },
+        {
+            "id": 24,
+            "name": "new york knicks",
+            "city": "new york",
+            "logo": "https://upload.wikimedia.org/wikipedia/fr/3/34/knicks_de_ny.png"
+        },
+        {
+            "id": 26,
+            "name": "orlando magic",
+            "city": "orlando",
+            "logo": "https://upload.wikimedia.org/wikipedia/fr/b/bd/orlando_magic_logo_2010.png"
+        },
+        {
+            "id": 27,
+            "name": "philadelphia 76ers",
+            "city": "philadelphia",
+            "logo": "https://upload.wikimedia.org/wikipedia/fr/4/48/76ers_2016.png"
+        },
+        {
+            "id": 38,
+            "name": "toronto raptors",
+            "city": "toronto",
+            "logo": "https://upload.wikimedia.org/wikipedia/fr/8/89/raptors2015.png"
+        },
+        {
+            "id": 41,
+            "name": "washington wizards",
+            "city": "washington",
+            "logo": "https://upload.wikimedia.org/wikipedia/fr/archive/d/d6/20161212034849%21wizards2015.png"
+        },
+        {
+            "id": 8,
+            "name": "Dallas Mavericks",
+            "city": "Dallas",
+            "logo": "https://upload.wikimedia.org/wikipedia/fr/thumb/b/b8/Mavericks_de_Dallas_logo.svg/150px-Mavericks_de_Dallas_logo.svg.png"
+        },
+        {
+            "id": 9,
+            "name": "Denver Nuggets",
+            "city": "Denver",
+            "logo": "https://upload.wikimedia.org/wikipedia/fr/thumb/3/35/Nuggets_de_Denver_2018.png/180px-Nuggets_de_Denver_2018.png"
+        },
+        {
+            "id": 11,
+            "name": "Golden State Warriors",
+            "city": "Golden State",
+            "logo": "https://upload.wikimedia.org/wikipedia/fr/thumb/d/de/Warriors_de_Golden_State_logo.svg/1200px-Warriors_de_Golden_State_logo.svg.png"
+        },
+        {
+            "id": 14,
+            "name": "Houston Rockets",
+            "city": "Houston",
+            "logo": "https://upload.wikimedia.org/wikipedia/fr/thumb/d/de/Houston_Rockets_logo_2003.png/330px-Houston_Rockets_logo_2003.png"
+        },
+        {
+            "id": 16,
+            "name": "LA Clippers",
+            "city": "LA",
+            "logo": "https://upload.wikimedia.org/wikipedia/fr/d/d6/Los_Angeles_Clippers_logo_2010.png"
+        },
+        {
+            "id": 17,
+            "name": "Los Angeles Lakers",
+            "city": "Los Angeles",
+            "logo": "https://upload.wikimedia.org/wikipedia/commons/thumb/3/3c/Los_Angeles_Lakers_logo.svg/220px-Los_Angeles_Lakers_logo.svg.png"
+        },
+        {
+            "id": 19,
+            "name": "Memphis Grizzlies",
+            "city": "Memphis",
+            "logo": "https://upload.wikimedia.org/wikipedia/en/thumb/f/f1/Memphis_Grizzlies.svg/1200px-Memphis_Grizzlies.svg.png"
+        },
+        {
+            "id": 22,
+            "name": "Minnesota Timberwolves",
+            "city": "Minnesota",
+            "logo": "https://upload.wikimedia.org/wikipedia/fr/thumb/d/d9/Timberwolves_du_Minnesota_logo_2017.png/200px-Timberwolves_du_Minnesota_logo_2017.png"
+        },
+        {
+            "id": 23,
+            "name": "New Orleans Pelicans",
+            "city": "New Orleans",
+            "logo": "https://upload.wikimedia.org/wikipedia/fr/thumb/2/21/New_Orleans_Pelicans.png/200px-New_Orleans_Pelicans.png"
+        },
+        {
+            "id": 25,
+            "name": "Oklahoma City Thunder",
+            "city": "Oklahoma City",
+            "logo": "https://upload.wikimedia.org/wikipedia/fr/thumb/4/4f/Thunder_d%27Oklahoma_City_logo.svg/1200px-Thunder_d%27Oklahoma_City_logo.svg.png"
+        },
+        {
+            "id": 28,
+            "name": "Phoenix Suns",
+            "city": "Phoenix",
+            "logo": "https://upload.wikimedia.org/wikipedia/fr/5/56/Phoenix_Suns_2013.png"
+        },
+        {
+            "id": 29,
+            "name": "Portland Trail Blazers",
+            "city": "Portland",
+            "logo": "https://upload.wikimedia.org/wikipedia/en/thumb/2/21/Portland_Trail_Blazers_logo.svg/1200px-Portland_Trail_Blazers_logo.svg.png"
+        },
+        {
+            "id": 30,
+            "name": "Sacramento Kings",
+            "city": "Sacramento",
+            "logo": "https://upload.wikimedia.org/wikipedia/fr/thumb/9/95/Kings_de_Sacramento_logo.svg/1200px-Kings_de_Sacramento_logo.svg.png"
+        },
+        {
+            "id": 31,
+            "name": "San Antonio Spurs",
+            "city": "San Antonio",
+            "logo": "https://upload.wikimedia.org/wikipedia/fr/0/0e/San_Antonio_Spurs_2018.png"
+        },
+        {
+            "id": 40,
+            "name": "Utah Jazz",
+            "city": "Utah",
+            "logo": "https://upload.wikimedia.org/wikipedia/fr/3/3b/Jazz_de_l%27Utah_logo.png"
+        }
+    ]
+}
