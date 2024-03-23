@@ -1,4 +1,4 @@
-const tableNames = ['Player', 'Team', "GameStats", "PlayerStats"];
+const tableNames = ['player', 'team', "game", "performance"];
 
 
 import { PrismaClient } from '@prisma/client';

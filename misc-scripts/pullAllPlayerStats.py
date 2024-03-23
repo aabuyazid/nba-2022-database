@@ -46,8 +46,9 @@ for team in teamIds:
     for player in players:
         player_data = {}
 
-        player_data['playerId']     = player['player']['id']
-        player_data['gameId']       = player['game'] ['id']
+        player_data['player_id']    = player['player']['id']
+        player_data['game_id']      = player['game'] ['id']
+        player_data['min']          = player['min']
         player_data['fga']          = player['fga']
         player_data['fgm']          = player['fgm']
         player_data['fgp']          = player['fgp']
@@ -56,14 +57,14 @@ for team in teamIds:
         player_data['ftp']          = player['ftp']
         player_data['tpa']          = player['tpa']
         player_data['tpp']          = player['tpp']
-        player_data['offReb']       = player['offReb']
-        player_data['defReb']       = player['defReb']
-        player_data['totReb']       = player['totReb']
+        player_data['off_reb']      = player['offReb']
+        player_data['def_reb']      = player['defReb']
+        player_data['tot_reb']      = player['totReb']
         player_data['steals']       = player['steals']
         player_data['assists']      = player['assists']
         player_data['turnovers']    = player['turnovers']
         player_data['blocks']       = player['blocks']
-        player_data['plusMinus']    = player['plusMinus']
+        player_data['plus_minus']   = int( player['plusMinus'].replace('+','') ) if (player['plusMinus'] != "--" and player['plusMinus'] != None) else 0
         player_data['comment']      = player['comment']
 
         data['players'].append(player_data)

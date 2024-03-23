@@ -1,0 +1,24 @@
+SELECT
+  AVG(pf.min),
+  AVG(pf.fga),
+  AVG(pf.fgm),
+  AVG(pf.fgp),
+  AVG(pf.fta),
+  AVG(pf.ftm),
+  AVG(pf.ftp),
+  AVG(pf.tpa),
+  AVG(pf.tpm),
+  AVG(pf.tpp),
+  AVG(pf.steals),
+  AVG(pf.assists),
+  AVG(pf.turnovers),
+  AVG(pf.blocks),
+  AVG(pf.plus_minus)
+FROM
+  Performance pf
+  JOIN Player pl ON pf.player_id = pl.id
+  JOIN Game g ON pf.game_id = g.id
+WHERE
+  LOWER(pl.name) = LOWER($ { playerName }) and
+  g.date BETWEEN ${startDate} AND ${startDate} + ${timeRange}
+GROUP BY pl.id

@@ -17,81 +17,81 @@ async function upsertTeam(teams) {
     });
 }
 
-async function upsertGameStat(gameStats) {
-    await client.gameStats.createMany({
+async function upsertGame(gameStats) {
+    await client.game.createMany({
         data: gameStats, 
         skipDuplicates: true
     });
 }
 
-async function upsertPlayerStats(playerStats) {
-    await client.playerStats.createMany({
+async function upsertPerformance(playerStats) {
+    await client.performance.createMany({
         data: playerStats, 
         skipDuplicates: true
     });
 }
 
-// Seeding team database
-//fs.readFile("./test-data/all-teams.json", function(err, data) {
-//
-//    if (err) throw err;
-//
-//    const dd = JSON.parse(data);
-//    const teams = dd['teams']
-//
-//    upsertTeam(teams)
-//        .catch((e) => {
-//            console.log(e);
-//            process.exit(1)
-//
-//        })
-//        .finally(() => {
-//            client.$disconnect();
-//        });
-//});
-//
-//// Seeding player database
-//fs.readFile("./test-data/all-players.json", function(err, data) {
-//
-//   if (err) throw err;
-//
-//   const dd = JSON.parse(data);
-//   const players = dd['players']
-//   players.forEach(player => {
-//       if(player.birthDate != null) {
-//           player.birthDate = new Date(player.birthDate.split('-'))
-//       }
-//   })
-//
-//   upsertPlayer(players)
-//       .catch((e) => {
-//           console.log(e);
-//           process.exit(1)
-//
-//       })
-//       .finally(() => {
-//           client.$disconnect();
-//       });
-//});
-//
-//// Seeding game stat database
-//fs.readFile("./test-data/all-nba-games.json", function(err, data) {
-//
-//   if (err) throw err;
-//
-//   const dd = JSON.parse(data);
-//   const games = dd['games']
-//
-//   upsertGameStat(games)
-//       .catch((e) => {
-//           console.log(e);
-//           process.exit(1)
-//
-//       })
-//       .finally(() => {
-//           client.$disconnect();
-//       });
-//});
+//Seeding team database
+fs.readFile("./test-data/all-teams.json", function(err, data) {
+
+    if (err) throw err;
+
+    const dd = JSON.parse(data);
+    const teams = dd['teams']
+
+    upsertTeam(teams)
+        .catch((e) => {
+            console.log(e);
+            process.exit(1)
+
+        })
+        .finally(() => {
+            client.$disconnect();
+        });
+});
+
+// Seeding player database
+fs.readFile("./test-data/all-players.json", function(err, data) {
+
+   if (err) throw err;
+
+   const dd = JSON.parse(data);
+   const players = dd['players']
+   players.forEach(player => {
+       if(player.birth_date != null) {
+           player.birth_date = new Date(player.birth_date.split('-'))
+       }
+   })
+
+   upsertPlayer(players)
+       .catch((e) => {
+           console.log(e);
+           process.exit(1)
+
+       })
+       .finally(() => {
+           client.$disconnect();
+       });
+});
+
+// Seeding game stat database
+fs.readFile("./test-data/all-nba-games.json", function(err, data) {
+
+   if (err) throw err;
+
+   const dd = JSON.parse(data);
+   const games = dd['games']
+
+   upsertGame(games)
+       .catch((e) => {
+           console.log(e);
+           process.exit(1)
+
+       })
+       .finally(() => {
+           client.$disconnect();
+       });
+});
 
 // Seeding Player Stat database
 fs.readFile("./test-data/all-player-stats-test.json", function(err, data) {
@@ -101,7 +101,7 @@ fs.readFile("./test-data/all-player-stats-test.json", function(err, data) {
    const dd = JSON.parse(data);
    const playerStats = dd['players']
 
-   upsertPlayerStats(playerStats)
+   upsertPerformance(playerStats)
        .catch((e) => {
            console.log(e);
            process.exit(1)

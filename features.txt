@@ -1,7 +1,7 @@
-- Roster of Teams
 - Worst performing game for Player
 - Worst performing game for Teams
 - Best performing game for Player
 - Best performing game for team
 - Moving Avg of Player Stats
-
+- Query all games by player
+- Query all games by team

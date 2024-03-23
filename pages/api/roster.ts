@@ -13,8 +13,9 @@ export default async function (
     }
 
     const { team } = req.query
-    const resultPlayers = await client.$queryRaw`SELECT * FROM Player p JOIN Team t ON p.teamId = t.id WHERE t.name = ${team}`
+    const resultPlayers = await client.$queryRaw`SELECT p.* FROM Player p JOIN Team t ON p.team_id = t.id WHERE LOWER(t.name) = LOWER(${team})`
 
     res.status(200).json(resultPlayers)
-    return
+    await client.$disconnect()
+    return res
 }

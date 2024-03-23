@@ -14,65 +14,65 @@ datasource db {
 }
 
 
-model Team {
+model team {
   id                  Int           @id @default(autoincrement())
+  players             player[]      // One Team - Many Players
+  competed_home       game[]        @relation(name: "competed_home")
+  competed_visitor    game[]        @relation(name: "competed_visitor")
   name                String        @db.VarChar(255)
   city                String        @db.VarChar(255)
   logo                String?   
-  players             Player[]      // One Team - Many Players
-  homeGames           GameStats[]   @relation(name: "homeGames")
-  awayGames           GameStats[]   @relation(name: "awayGames")
 }
 
-model Player {
+model player {
   id                  Int           @id @default(autoincrement())
+  plays_for           team          @relation(fields: [team_id], references: [id])
+  team_id             Int
   name                String        @db.VarChar(255)
-  birthDate           DateTime?
-  birthCountry        String?       @db.VarChar(255)
+  birth_date          DateTime?
+  birth_country       String?       @db.VarChar(255)
   height              String?       @db.VarChar(255)
   weight              String?       @db.VarChar(255)
-  singlePlayerStats   PlayerStats[] // One Player - Many Stats
-  team                Team          @relation(fields: [teamId], references: [id])
-  teamId              Int
+  single_player_perms performance[] // One Player - Many Stats
 }
 
-model GameStats {
+model game {
   id                  Int           @id @default(autoincrement())
+  home_team           team          @relation(name: "competed_home", fields: [home_team_id], references: [id])
+  home_team_id        Int   
+  visitor_team        team          @relation(name: "competed_visitor", fields: [visitor_team_id], references: [id])
+  visitor_team_id     Int   
+  diff_player_perms   performance[] // One Game - Many Player Stats
   date                DateTime
-  homePoints          Int
-  visitorPoints       Int
-  timesTied           Int?
-  leadChanges         Int?
-  diffPlayerStats     PlayerStats[] // One Game - Many Player Stats
-  homeTeam            Team          @relation(name: "homeGames", fields: [homeTeamId], references: [id])
-  homeTeamId          Int   
-  visitorTeam         Team          @relation(name: "awayGames", fields: [visitorTeamId], references: [id])
-  visitorTeamId       Int   
+  home_points         Int
+  visitor_points      Int
+  times_tied          Int?
+  lead_changes        Int?
 }
 
-model PlayerStats {
+model performance {
   id                  Int           @id @default(autoincrement())
-  min                 String?        
+  is_performed_by     player        @relation(fields: [player_id], references: [id])
+  performed_at        game          @relation(fields: [game_id], references: [id])
+  player_id           Int
+  game_id             Int
+  min                 Int?        
   fga                 Int?
   fgm                 Int?
-  fgp                 String?        
+  fgp                 Float?        
   fta                 Int?
   ftm                 Int?
-  ftp                 String?        
+  ftp                 Float?        
   tpa                 Int?
   tpm                 Int?
-  tpp                 String?        
-  offReb              Int?
-  defReb              Int?
-  totReb              Int?
+  tpp                 Float?        
+  off_reb             Int?
+  def_reb             Int?
+  tot_reb             Int?
   steals              Int?
   assists             Int?
   turnovers           Int?
   blocks              Int?
-  plusMinus           String?
+  plus_minus          Int?
   comment             String?
-  player              Player        @relation(fields: [playerId], references: [id])
-  gameStats           GameStats?    @relation(fields: [gameId], references: [id])
-  playerId            Int
-  gameId              Int
 }

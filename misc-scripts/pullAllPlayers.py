@@ -50,11 +50,11 @@ for team in teamIds:
 
         player_data['id']               = player['id']
         player_data['name']             = player['firstname'] + " " + player['lastname']
-        player_data['birthDate']        = player['birth']['date']
-        player_data['birthCountry']     = player['birth']['country']
+        player_data['birth_date']       = player['birth']['date']
+        player_data['birth_country']    = player['birth']['country']
         player_data['height']           = player['height']['meters']
         player_data['weight']           = player['weight']['kilograms']
-        player_data['teamId']           = team
+        player_data['team_id']          = team
 
         data['players'].append(player_data)
     
