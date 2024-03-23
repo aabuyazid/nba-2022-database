@@ -1,7 +1,7 @@
 import type { NextApiRequest, NextApiResponse} from "next" 
 import { PrismaClient } from "@prisma/client";
 
-const client = globalThis.prisma || new PrismaClient()
+const client = new PrismaClient()
 
 export default async function (
     req: NextApiRequest,
