@@ -1,7 +1,7 @@
 "use client"
 
 import { useState, useEffect } from "react";
-import PerformanceDisplay from "./performancedisplay"
+import GameDisplay from "./gamedisplay"
 
 export default function AvgTeamStats() {
     const [team, setTeam] = useState('')
@@ -12,7 +12,7 @@ export default function AvgTeamStats() {
     const handleSubmit = async (e) => {
         e.preventDefault()
 
-        const response = await fetch(`/api/avg-player-stats?team=${team}&startDate=${startDate}&timeRange=${timeRange}`)
+        const response = await fetch(`/api/avg-team-stats?team=${team}&startDate=${startDate}&timeRange=${timeRange}`)
 
         const roster = await response.json().then(jsonData => {
             setAverages(jsonData)

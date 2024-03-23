@@ -16,25 +16,38 @@ export default async function (
     const resultPlayers = await client.$queryRaw`
         SELECT 
             TRUNC(AVG(CASE
-                WHEN g.home_team_id = (SELECT t.id FROM Team t 
+                WHEN g.home_team_id = 
+                (SELECT t.id FROM Team t 
                                         WHERE LOWER(t.name) = LOWER(${team})) 
                     THEN g.home_points
                 WHEN g.visitor_team_id = (SELECT t.id FROM Team t 
                                         WHERE LOWER(t.name) = LOWER(${team})) 
                     THEN g.visitor_points
                 END  
-            )::numeric, 2) as points
-            TRUNC(AVG(g.times_tied)::numeric, 2) as times_tied
+            )::numeric, 2) as points,
+            TRUNC(AVG(g.times_tied)::numeric, 2) as times_tied,
             TRUNC(AVG(g.lead_changes)::numeric, 2) as lead_changes
         FROM Game g
-        JOIN Team t1 ON t1.id = g.home_team_id
-        JOIN Team t2 ON t2.id = g.visitor_team_id
         WHERE 
+        (g.home_team_id =  
+                (SELECT t.id FROM Team t 
+                WHERE LOWER(t.name) = LOWER(${team})) or
+        g.visitor_team_id =  
+                (SELECT t.id FROM Team t 
+                WHERE LOWER(t.name) = LOWER(${team}))) and 
         CAST(g.date as DATE) BETWEEN CAST(${startDate} AS DATE) and CAST(${startDate} AS DATE) + CAST(${timeRange} as INTEGER)
-        GROUP BY t1.id
     `
 
     res.status(200).json(resultPlayers)
     await client.$disconnect()
     return res
 }
+//  -- TRUNC(AVG(CASE
+//             --     WHEN g.home_team_id = (SELECT t.id FROM Team t 
+//             --                             WHERE LOWER(t.name) = LOWER(${team})) 
+//             --         THEN g.home_points
+//             --     WHEN g.visitor_team_id = (SELECT t.id FROM Team t 
+//             --                             WHERE LOWER(t.name) = LOWER(${team})) 
+//             --         THEN g.visitor_points
+//             --     END  
+//             -- )::numeric, 2) as points
