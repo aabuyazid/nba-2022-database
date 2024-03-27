@@ -8,6 +8,8 @@ export default function Home() {
       <h1 className="text-md">Click and try out the features below</h1>
       <p>
         <br/>
+        Analytical Features
+        <br/>
         <br/>
       </p>
       <Link href={"/roster"}>
@@ -33,6 +35,18 @@ export default function Home() {
       </Link>
       <Link href={"/team-most-relied"}>
           <h1 className="text-md">Team's Most Relied-Upon Player</h1>
+      </Link>
+      <p>
+        <br/>
+        Database Manipulation Features
+        <br/>
+        <br/>
+      </p>
+      <Link href={"/add-player"}>
+          <h1 className="text-md">Add a Player</h1>
+      </Link>
+      <Link href={"/remove-player"}>
+          <h1 className="text-md">Remove a Player</h1>
       </Link>
     </main>
   );
