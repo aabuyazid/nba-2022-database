@@ -31,19 +31,44 @@ export default async function (
 
     if(idQuery.length == 0) {
         res.status(400).json({"message": "Invalid Team Name. Please try again"})
+        await client.$disconnect()
         return
     }
 
     const teamId = idQuery[0].id
     console.error(`Obtained teamId ${teamId}`)
 
-    const resultPlayers = await client.$queryRaw`
-    INSERT INTO Player (name, team_id, birth_date, birth_country, height, weight)
-    VALUES(${body.playerName}, ${teamId}, CAST(${body.birth_date} AS DATE), 
-    ${body.birth_country}, ${body.height}, ${body.height})
+    const dupQuery = await client.$queryRaw`
+    SELECT * FROM Player p
+    WHERE LOWER(p.name) = LOWER(${body.playerName}) and p.team_id = ${teamId}
     `
 
-    res.status(200).json({"message": "Success! Please check the team roster."})
+    if(dupQuery.length > 0) {
+        res.status(400).json({"message": "Player is already in database"})
+        await client.$disconnect()
+        return
+    }
+
+    if(body.birthDate === '') {
+        body.birthDate = null
+    }
+
+
+
+    try {
+        const resultPlayers = await client.$queryRaw`
+        INSERT INTO Player (name, team_id, birth_date, birth_country, height, weight)
+        VALUES(${body.playerName}, ${teamId}, CAST(${body.birthDate} AS DATE), 
+        ${body.birthCountry}, ${body.height}, ${body.weight})
+        `
+        res.status(200).json({"message": "Success! Please check the team roster."})
+    }
+    catch (e) {
+        console.error(e)
+        res.status(400).json(e.meta.message)
+    }
+
     await client.$disconnect()
-    return res
+    return 
+
 }

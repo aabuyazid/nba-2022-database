@@ -28,7 +28,7 @@ export default function BestGamePlayer() {
     }
     return (
     <main className="flex min-h-screen flex-col items-center p-12">
-        <h1 className="test-lg">Remmove a player to the database</h1>
+        <h1 className="test-lg">Remove a player to the database</h1>
         <p><br/></p>
         <form onSubmit={handleSubmit}>
             <label htmlFor="playerName">Player's Name</label>
